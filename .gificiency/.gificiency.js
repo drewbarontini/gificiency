@@ -1,9 +1,9 @@
 var Gificiency = (function() {
   'use strict';
 
-  var searchField = $('.search');
-  var items = $('li');
-  var links = $('a');
+  var searchField = $('.search'),
+      items = $('li'),
+      links = $('a');
 
   var search = function(filter) {
     links.each(function() {
@@ -36,33 +36,29 @@ var Gificiency = (function() {
     return $('<img src="'+ image +'" />');
   };
 
-  var Gificiency = {
-
-    init: function() {
-
-      if ( getHash() ) {
-        search( getHash() );
-      }
-
-      Gificiency.events();
-
-    },
-
-    events: function() {
-
-      searchField.on('keyup', function() {
-        search( $(this).val() );
-      });
-
-      items.on('mouseover', function() {
-        var elem = $(this).find('a'), image = elem.attr('href');
-        elem.parent().append( popup(image) );
-      }).on('mouseout', function() {
-        clearImages();
-      });
-
+  var init = function() {
+    if ( getHash() ) {
+      search( getHash() );
     }
+    events();
+  };
 
+  var events = function() {
+    searchField.on('keyup', function() {
+      search( $(this).val() );
+    });
+
+    items.on('mouseover', function() {
+      var elem = $(this).find('a'), image = elem.attr('href');
+      elem.parent().append( popup(image) );
+    }).on('mouseout', function() {
+      clearImages();
+    });
+  };
+
+  var Gificiency = {
+    init: init,
+    events: events
   };
 
   return Gificiency;
