@@ -1,8 +1,12 @@
 var Gificiency = (function() {
   'use strict';
 
+  var searchField = $('.search');
+  var items = $('li');
+  var links = $('a');
+
   var search = function(filter) {
-    $('a').each(function() {
+    links.each(function() {
       var elem = $(this);
       if (elem.text().search( new RegExp(filter, 'i') ) < 0) {
         elem.hide();
@@ -35,20 +39,28 @@ var Gificiency = (function() {
   var Gificiency = {
 
     init: function() {
+
       if ( getHash() ) {
         search( getHash() );
       }
 
-      $('.search').on('keyup', function() {
+      Gificiency.events();
+
+    },
+
+    events: function() {
+
+      searchField.on('keyup', function() {
         search( $(this).val() );
       });
 
-      $('li').on('mouseover', function() {
+      items.on('mouseover', function() {
         var elem = $(this).find('a'), image = elem.attr('href');
         elem.parent().append( popup(image) );
       }).on('mouseout', function() {
         clearImages();
       });
+
     }
 
   };
