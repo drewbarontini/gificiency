@@ -1,4 +1,4 @@
-<?php
+<?php require_once 'config.php';
 
 function print_files($url, $dir)
 {
