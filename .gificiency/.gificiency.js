@@ -5,6 +5,26 @@ var Gificiency = (function() {
       items = $('li'),
       links = $('a');
 
+  var init = function() {
+    if ( getHash() ) {
+      search( getHash() );
+    }
+    events();
+  };
+
+  var events = function() {
+    searchField.on('keyup', function() {
+      search( $(this).val() );
+    });
+
+    items.on('mouseover', function() {
+      var elem = $(this).find('a'), image = elem.attr('href');
+      elem.parent().append( popup(image) );
+    }).on('mouseout', function() {
+      clearImages();
+    });
+  };
+
   var search = function(filter) {
     links.each(function() {
       var elem = $(this);
@@ -36,29 +56,8 @@ var Gificiency = (function() {
     return $('<img src="'+ image +'" />');
   };
 
-  var init = function() {
-    if ( getHash() ) {
-      search( getHash() );
-    }
-    events();
-  };
-
-  var events = function() {
-    searchField.on('keyup', function() {
-      search( $(this).val() );
-    });
-
-    items.on('mouseover', function() {
-      var elem = $(this).find('a'), image = elem.attr('href');
-      elem.parent().append( popup(image) );
-    }).on('mouseout', function() {
-      clearImages();
-    });
-  };
-
   var Gificiency = {
-    init: init,
-    events: events
+    init: init
   };
 
   return Gificiency;
