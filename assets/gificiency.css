@@ -60,6 +60,13 @@ a, .search {
   padding: 5px 40px 8px;
 }
 
+/* Container */
+
+.cell {
+  margin: 0 auto;
+  position: relative;
+}
+
 /* Links */
 
 a {
@@ -76,13 +83,6 @@ a:focus {
 a:focus,
 .search:focus {
   outline: none;
-}
-
-/* Container */
-
-.cell {
-  margin: 0 auto;
-  position: relative;
 }
 
 /* Search */
