@@ -17,12 +17,19 @@ var Gificiency = (function() {
       search( $(this).val() );
     });
 
+    var throttledInjectPopup = _.throttle(injectPopup, 500);
+
     items.on('mouseover', function() {
       var elem = $(this).find('a'), image = elem.attr('href');
-      elem.parent().append( popup(image) );
+      elem.parent().append()
+      throttledInjectPopup(elem, image);
     }).on('mouseout', function() {
       clearImages();
     });
+
+    function injectPopup(elem, image) {
+      elem.parent().append( popup(image) );
+    }
   };
 
   var search = function(filter) {

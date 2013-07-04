@@ -19,6 +19,7 @@
   </ul>
 
   <script src="http://code.jquery.com/jquery-1.10.0.min.js" type="text/javascript"></script>
+  <script src="assets/underscore.min.js" type="text/javascript"></script>
   <script src="assets/gificiency.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(function() {
