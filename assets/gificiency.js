@@ -21,7 +21,6 @@ var Gificiency = (function() {
 
     items.on('mouseover', function() {
       var elem = $(this).find('a'), image = elem.attr('href');
-      elem.parent().append()
       throttledInjectPopup(elem, image);
     }).on('mouseout', function() {
       clearImages();
