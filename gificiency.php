@@ -25,7 +25,7 @@ function print_files($url, $dir)
       $namehref = $dirArray[$index];
       echo("
         <li>
-          <a href='$url/$namehref'>$name</a>
+          <a class='link' href='$url/$namehref'>$name</a>
         </li>
       ");
     }

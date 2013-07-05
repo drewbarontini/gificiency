@@ -59,7 +59,7 @@ var Gificiency = (function() {
   };
 
   var popup = function(image) {
-    return $('<img src="'+ image +'" />');
+    return $('<img class="gif" src="'+ image +'" />');
   };
 
   var Gificiency = {
