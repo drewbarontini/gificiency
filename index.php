@@ -12,12 +12,12 @@
     <input type="text" name="search" placeholder="Search..." class="search" />
   </form>
   <ul class="links">
-    <?php require_once 'lib/gificiency.php'; ?>
-    <?php if ($env == 'development'): ?>
-      <?php require_once 'lib/seeds.php'; ?>
-    <?php else: ?>
-      print_files($url, $dir);
-    <?php endif; ?>
+    <? require_once 'lib/gificiency.php'; ?>
+    <? if ($env == 'development'): ?>
+      <? require_once 'lib/seeds.php'; ?>
+    <? else: ?>
+      <?= print_files($url, $dir); ?>
+    <? endif; ?>
   </ul>
 
   <script src="http://code.jquery.com/jquery-1.10.0.min.js" type="text/javascript"></script>
