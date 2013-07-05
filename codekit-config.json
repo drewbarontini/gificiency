@@ -13,6 +13,18 @@
       "outputAbbreviatedPath" : "\/assets\/javascripts\/gificiency-min.js",
       "fileType" : 64
     },
+    "\/assets\/stylesheets\/_reset.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/stylesheets\/_reset.scss",
+      "outputStyle" : 0,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/assets\/stylesheets\/_reset.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/assets\/javascripts\/gificiency.coffee" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -45,18 +57,6 @@
       "outputAbbreviatedPath" : "\/assets\/javascripts\/vendor\/underscore.min-min.js",
       "fileType" : 64
     },
-    "\/assets\/stylesheets\/_reset.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/stylesheets\/_reset.scss",
-      "outputStyle" : 0,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/assets\/stylesheets\/_reset.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/index.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -78,15 +78,6 @@
       "fileType" : 2,
       "debugStyle" : 0
     },
-    "\/assets\/stylesheets\/gificiency.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/assets\/stylesheets\/gificiency.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/lib\/gificiency.php" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -104,6 +95,15 @@
       "inputAbbreviatedPath" : "\/config.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/assets\/stylesheets\/gificiency.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/assets\/stylesheets\/gificiency.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     }
   },
   "manualImportLinks" : [
