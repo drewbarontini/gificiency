@@ -10,11 +10,15 @@ class @Gificiency
     @options.searchField.on 'keyup', (e) =>
       @search( $(e.currentTarget).val() )
 
+    throttledInjectPopup = _.throttle(@injectPopup, 500)
+
     @options.items.on('mouseover', (e) =>
       elem = $(e.currentTarget).find('a')
       image = elem.attr('href')
-      elem.parent().append( @popup(image) )
+      throttledInjectPopup(elem, image)
     ).on('mouseout', => @clearImages() )
+
+  injectPopup: (elem, image) => elem.parent().append( @popup(image) )
 
   search: (filter) ->
     @options.links.each ->
