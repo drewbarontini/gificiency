@@ -12,18 +12,24 @@
     <input type="text" name="search" placeholder="Search..." class="search" />
   </form>
   <ul class="links">
-    <?php
-      require_once 'gificiency.php';
+    <?php require_once 'lib/gificiency.php'; ?>
+    <?php if ($env == 'development'): ?>
+      <?php require_once 'lib/seeds.php'; ?>
+    <?php else: ?>
       print_files($url, $dir);
-    ?>
+    <?php endif; ?>
   </ul>
 
   <script src="http://code.jquery.com/jquery-1.10.0.min.js" type="text/javascript"></script>
   <script src="assets/javascripts/vendor/underscore.min.js" type="text/javascript"></script>
-  <script src="assets/javascripts/gificiency-min.js" type="text/javascript"></script>
+  <script src="assets/javascripts/gificiency.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(function() {
-      Gificiency.init();
+      new Gificiency({
+        searchField: $('.search'),
+        items: $('.links li'),
+        links: $('.link')
+      });
     });
   </script>
 
