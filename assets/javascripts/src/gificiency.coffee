@@ -119,7 +119,7 @@ class @Gificiency
 
   setFilterList: ->
     list = @settings.filterList
-    $.each @listCategories(true), (key, value) =>
+    $.each @listCategories(), (key, value) =>
       list.append(
         "<li class='filter-item filter-item--#{value}'>
           <a class='filter-link' href='##{value}'>#{value}</a>
