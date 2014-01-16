@@ -13,6 +13,6 @@ Become more GIF-efficient.
 - Upload the `assets`, `lib`, `config.php`, and `index.php` files to your server
 - You can remove each `src` directory in the `assets/stylesheets` and `assets/javascripts`
 
-The `$url` variable is the URL to your application, and the `$dir` variable is a 
-relative path (from the directory you uploaded the files to) to where you are storing 
+The `$url` variable is the URL to your media files, and the `$dir` variable is a
+relative path (from the directory you uploaded the files to) to where you are storing
 the media (GIFs, images).
