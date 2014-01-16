@@ -89,13 +89,11 @@ class @Gificiency
       if category?
         self.categories.push(category)
         elem.addClass("category category--#{category}")
-      else
-        elem.addClass("category category--none")
 
   # ----- List Categories ----- #
 
   listCategories: ->
-    category for category in @categories
+    category for category in @categories.unique()
 
   # ----- Get Category ----- #
 
@@ -107,6 +105,13 @@ class @Gificiency
 
   trimCategory: (str) ->
     str.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, '')
+
+  # ----- Unique Array ----- #
+
+  Array::unique = ->
+    output = {}
+    output[@[key]] = @[key] for key in [0...@length]
+    value for key, value of output
 
   # -------------------------------------
   #   Filter
