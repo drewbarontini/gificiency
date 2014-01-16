@@ -11,37 +11,6 @@
   -moz-box-sizing: border-box
   box-sizing: border-box
 
-// ----- Clearfix ----- //
-
-.group::after
-  clear: both
-  content: ''
-  display: table
-
-// ----- Debug ----- //
-
-.debug
-  background-color: pink !important
-
-// ----- Ellipsis ----- //
-
-.ellipsis
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
-
-// ----- Image Replacement ----- //
-
-.ir
-  background-color: transparent
-  border: 0
-  overflow: hidden
-  &:before
-    content: ''
-    display: block
-    width: 0
-    height: 150%
-
 // -------------------------------------
 //   Background
 // -------------------------------------
@@ -59,12 +28,6 @@
   border: $b-border
 .bdrb
   border-bottom: $b-border
-.bdrl
-  border-left: $b-border
-.bdrr
-  border-right: $b-border
-.bdrt
-  border-top: $b-border
 
 // -------------------------------------
 //   Display
@@ -157,15 +120,6 @@
   position: static
 
 // -------------------------------------
-//   Rounding
-// -------------------------------------
-
-.ra
-  border-radius: 50%
-.ram
-  border-radius: $b-borderRadius
-
-// -------------------------------------
 //   Text
 // -------------------------------------
 
@@ -186,32 +140,3 @@
 .tfb
   font-family: $f-base
 
-// ----- Size ----- //
-
-.tsxs
-  font-size: 60%
-.tss
-  font-size: 75%
-.tsm
-  font-size: 85%
-.tsl
-  font-size: 105%
-.tsxl
-  font-size: 115%
-
-// ----- Style ----- //
-
-.tsi
-  font-style: italic
-
-// ----- Transform ----- //
-
-.ttu
-  text-transform: uppercase
-
-// ----- Weight ----- //
-
-.twn
-  font-weight: normal
-.twb
-  font-weight: bold
