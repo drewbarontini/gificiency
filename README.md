@@ -12,5 +12,5 @@ Become more GIF-efficient.
 - Open up `config.php` and edit the `$url` and `$dir` directories (see below)
 - Upload the entire directory to your server
 
-The `$url` variables is the URL to your application, and the `$dir` is a 
+The `$url` variable is the URL to your application, and the `$dir` is a 
 relative path to where you are storing the media (GIFs, images).
