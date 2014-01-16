@@ -13,4 +13,5 @@ Become more GIF-efficient.
 - Upload the entire directory to your server
 
 The `$url` variable is the URL to your application, and the `$dir` variable is a 
-relative path to where you are storing the media (GIFs, images).
+relative path (from the directory you uploaded the files to) to where you are storing 
+the media (GIFs, images).
