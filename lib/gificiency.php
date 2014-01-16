@@ -37,7 +37,7 @@ function print_files($url, $dir)
     }
   } else {
     echo("
-      <p class='tac'>Couldn't open the directory specified.</p>
+      <p class='mtm tac'>Couldn't open the directory specified.</p>
     ");
   }
 }
