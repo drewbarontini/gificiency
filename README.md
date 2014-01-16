@@ -29,13 +29,15 @@ use the same settings. Once you're done, upload the compiled CSS/JS files to the
 ## Alfred Search
 
 To set up the [Alfred](http://alfredapp.com) custom search, go to `Settings > Features > Web Search`
-and click `Add Custom Search` at the bottom right. Then, enter the following details:
+and click `Add Custom Search` at the bottom right. Then, enter the following details (adding your
+site-specific information):
 
 ![Screenshot](http://cl.drewb.io/image/3a3h0S231l01/Screenshot%202014-01-16%2017-09-09.png)
 
 ## Hazel Script
 
 To get the custom [Hazel](http://www.noodlesoft.com/hazel.php) script working, create a folder somewhere
-that you will drop your GIFs into. Next, add a new script in that folder, and enter the following:
+that you will drop your GIFs into. Next, add a new script in that folder, and enter the following (adding 
+your FTP server credentials):
 
 ![Screenshot](http://cl.drewb.io/image/2O0r1D2D2R1h/Screenshot%202014-01-16%2017-12-36.png)
