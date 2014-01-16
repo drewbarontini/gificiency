@@ -1,6 +1,7 @@
 # Gificiency
 
 Become more GIF-efficient.
+[http://drewbarontini.com/articles/reinvigorate](http://drewbarontini.com/articles/reinvigorate)
 
 ## Requirements
 
