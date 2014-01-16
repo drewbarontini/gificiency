@@ -2,5 +2,5 @@
 
 $env = ($_SERVER['SERVER_NAME'] == 'localhost') ? 'development' : 'production';
 
-$url = 'http://drewb.io/m';
-$dir = '../m';
+$url = 'URLTOFILES';  // E.g. http://example.com/media
+$dir = 'PATHTOFILES'; // E.g. media
