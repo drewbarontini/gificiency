@@ -1,0 +1,18 @@
+// *************************************
+//
+//   Link
+//   -> Individual GIF links
+//
+// *************************************
+
+.link
+  @extend .bdrb
+  @extend .db
+  @extend .tcb
+  +transition(all 0.3s ease-in-out)
+  padding: 0.5 * $b-whitespace 2 * $b-whitespace
+  &:hover,
+  &:focus
+    @extend .tch
+    padding-left: 4 * $b-whitespace
+    outline: none

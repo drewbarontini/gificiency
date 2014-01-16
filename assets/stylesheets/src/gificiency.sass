@@ -1,113 +1,36 @@
 // *************************************
 //
 //   Gificiency
-//   -> Become more GIF-efficient.
+//   -> Manifest
 //
 // *************************************
 
 // -------------------------------------
-//   Core
+//   Foundation
 // -------------------------------------
 
-// ----- Reset ----- //
-
-@import "reset"
-
-// ----- Settings ----- //
-
-$base-background: #6284bc
-$base-border: 4px solid darken($base-background, 20%)
-$base-color: darken($base-background, 20%)
-$base-fontFamily: "Roboto" sans-serif
-$base-fontSize: 30px
-$base-highlight-color: #fff
-$base-lineHeight: 1.5
-
-// ----- Helpers ----- //
-
-// rem
-
-@function rem($size)
-  @return #{$size / $base-fontSize}rem
-
-// Respond-to
-
-=respond-to($val, $query: min-width, $media: screen)
-  @media #{$media} and ($query: $val)
-    @content
-
-// ----- Base ----- //
-
-html
-  background: $base-background
-
-body
-  color: $base-color
-  font-family: $base-fontFamily
-  font-size: rem(18px)
-  line-height: $base-lineHeight
-  +respond-to(768px)
-    font-size: $base-fontSize
-
-ul
-  margin: 0
-  padding: 0
-  li
-    list-style-type: none
-
-::-webkit-input-placeholder
-  color: #fff
-
-// ----- Layout ----- //
-
-.l-cell
-  margin: 0 auto
-  position: relative
+@import "foundation/reset"
+@import "foundation/settings"
+@import "foundation/helpers"
+@import "foundation/utilities"
+@import "foundation/base"
 
 // -------------------------------------
-//   Modules
+//   Components
 // -------------------------------------
 
-// ----- Shared ----- //
+@import "components/card"
+@import "components/cell"
 
-.link, .search
-  border-bottom: $base-border
-  padding: 5px 40px 8px
-  &:focus
-    outline: none
+// -------------------------------------
+//   Structures
+// -------------------------------------
 
-// ----- GIF ----- //
+@import "structures/filter"
+@import "structures/link"
+@import "structures/search"
 
-.gif
-  background: #fff
-  max-width: 600px
-  padding: 10px
-  position: fixed
-  right: 10px
-  top: 10px
-  z-index: 100
+// -------------------------------------
+//   Inbox
+// -------------------------------------
 
-// ----- Link ----- //
-
-.link
-  color: $base-color
-  display: block
-  text-decoration: none
-  transition: all 0.3s ease-in-out
-  -webkit-transition: all 0.3s ease-in-out
-  &:hover,
-  &:focus
-    color: $base-highlight-color
-    padding-left: 75px
-
-// ----- Search ----- //
-
-.search
-  background: $base-color
-  box-sizing: border-box
-  border: 0
-  color: $base-highlight-color
-  font-size: 40px
-  padding-top: 10px
-  padding-bottom: 15px
-  width: 100%

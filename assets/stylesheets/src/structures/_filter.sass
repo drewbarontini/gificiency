@@ -1,0 +1,78 @@
+// *************************************
+//
+//   Filter
+//   -> Filter those GIFs
+//
+// *************************************
+
+.filter
+  height: 100%
+
+// -------------------------------------
+//   States
+// -------------------------------------
+
+// Expanded
+
+.filter.is-expanded
+
+  .filter-list
+    @extend .db
+
+  .filter-toggle
+    background: darken($c-base, 10%)
+
+// -------------------------------------
+//   Scaffolding
+// -------------------------------------
+
+// ----- Item ----- //
+
+.filter-item
+  @extend .di
+  @extend .mbs
+  @extend .mrs
+
+// ----- List ----- //
+
+.filter-list
+  @extend %box-sizing
+  @extend .dn
+  background: darken($c-base, 5%)
+  padding: 0.5 * $b-whitespace
+  width: 100%
+
+// ----- Link ----- //
+
+.filter-link
+  @extend .bdr
+  @extend .dib
+  @extend .tch
+  +transition(border-color 0.3s ease-in-out)
+  border-radius: 40px
+  font-size: 80%
+  line-height: 2
+  padding: 0 $b-whitespace
+  &:hover,
+  &:focus
+    border-color: $c-highlight
+
+// ----- Toggle ----- //
+
+.filter-toggle
+  @extend %box-sizing
+  @extend .db
+  @extend .poa
+  @extend .tac
+  @extend .tch
+  +transition(background 0.3s ease-in-out)
+  background: darken($c-base, 5%)
+  line-height: 2.9
+  padding: 0 (1.5 * $b-whitespace)
+  right: 0
+  top: 0
+  width: 20%
+  &:hover,
+  &:focus
+    background: darken($c-base, 10%)
+

@@ -1,0 +1,23 @@
+// *************************************
+//
+//   Helpers
+//   -> Functions, Mixins, Animations
+//
+// *************************************
+
+// -------------------------------------
+//   Mixins
+// -------------------------------------
+
+// ----- Respond-to ----- //
+
+=respond-to($val, $query: min-width, $media: screen)
+  @media #{$media} and ($query: $val)
+    @content
+
+// ----- Transition ----- //
+
+=transition($args)
+  transition: $args
+  -webkit-transition: $args
+

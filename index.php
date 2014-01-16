@@ -8,10 +8,17 @@
    <link rel="stylesheet" href="assets/stylesheets/gificiency.css">
 </head>
 <body class="cell">
-  <form class="form" action="">
-    <input type="text" name="search" placeholder="Search..." class="search" />
-  </form>
-  <ul class="links">
+  <header class="header">
+    <form class="form" action="">
+      <input type="text" name="search" placeholder="Search..." class="search" />
+    </form>
+    <div class="filter">
+      <a href="#" class="filter-toggle">Filter</a>
+      <ul class="filter-list"></ul>
+    </div>
+  </header>
+
+  <ul class="categories">
     <? require_once 'lib/gificiency.php'; ?>
     <? if ($env == 'development'): ?>
       <? require_once 'lib/seeds.php'; ?>
@@ -25,11 +32,7 @@
   <script src="assets/javascripts/gificiency.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(function() {
-      new Gificiency({
-        searchField: $('.search'),
-        items: $('.links li'),
-        links: $('.link')
-      });
+      var gificiency = new Gificiency();
     });
   </script>
 
