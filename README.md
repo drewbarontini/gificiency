@@ -16,3 +16,11 @@ Become more GIF-efficient.
 The `$url` variable is the URL to your media files, and the `$dir` variable is a
 relative path (from the directory you uploaded the files to) to where you are storing
 the media (GIFs, images).
+
+## Making Changes
+
+If you so choose, you can change the design/functionality by compiling the Sass/CoffeeScript
+files in the `src` directory of each of the `assets/stylesheets`, `assets/javascripts` directories,
+respectively. You can use something like [CodeKit](http://incident57.com/codekit/) to compile your
+files. If you do this, there's a `codekit-config.json` file in the root of the directory that will
+use the same settings.
