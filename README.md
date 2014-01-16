@@ -36,6 +36,6 @@ and click `Add Custom Search` at the bottom right. Then, enter the following det
 ## Hazel Script
 
 To get the custom [Hazel](http://www.noodlesoft.com/hazel.php) script working, create a folder somewhere
-that you will drop your GIFs into. Next add a new script in that folder, and enter the following:
+that you will drop your GIFs into. Next, add a new script in that folder, and enter the following:
 
 ![Screenshot](http://cl.drewb.io/image/2O0r1D2D2R1h/Screenshot%202014-01-16%2017-12-36.png)
