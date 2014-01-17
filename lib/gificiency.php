@@ -1,6 +1,7 @@
 <?php require_once 'config.php';
 
-if ($env == 'production') {
+if ($env == 'production') 
+{
   error_reporting(E_ERROR | E_PARSE);
 }
 
@@ -10,7 +11,8 @@ function print_files($url, $dir)
 
   $myDirectory = opendir($dir);
 
-  if ($myDirectory) {
+  if ($myDirectory) 
+  {
     while ($entryName = readdir($myDirectory))
     {
       $dirArray[] = $entryName;
@@ -35,7 +37,9 @@ function print_files($url, $dir)
         ");
       }
     }
-  } else {
+  } 
+  else 
+  {
     echo("
       <p class='ptm tac'>Couldn't open the directory specified.</p>
     ");
