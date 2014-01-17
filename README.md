@@ -22,14 +22,14 @@ the media (GIFs, images). Once these variables are set up:
 - Add your GIFs
 - Start becoming more gificient
 
-If you want to become even more gificient, look at the **Alfred** and **Hazel** workflows that I
-use to prevent myself from ever having to manually upload my GIFs via FTP.
+If you want to become even more gificient, look at the **Alfred** and **Hazel** workflows below
+that I use to prevent myself from ever having to manually upload my GIFs via FTP.
 
 ## Filter
 
 By default, the filter functionality will populate with all of the categories you have specified
 in the filename. I use the convention `category-descriptor.gif`, so `angry-batman.gif`, for example.
-If you want to change the hyphen (`-`) delimiter, change the `Gificiency` instantation call in `index.php`:
+If you want to change the hyphen (`-`) delimiter, change the `Gificiency` instantiation call in `index.php`:
 
 ```javascript
 $(function() {
