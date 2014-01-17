@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Gificiency</title>
    <link href="http://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
    <link rel="stylesheet" href="assets/stylesheets/gificiency.css">
