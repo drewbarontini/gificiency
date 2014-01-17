@@ -16,7 +16,28 @@ Become more GIF-efficient.
 
 The `$url` variable is the URL to your media files, and the `$dir` variable is a
 relative path (from the directory you uploaded the files to) to where you are storing
-the media (GIFs, images).
+the media (GIFs, images). Once these variables are set up: 
+
+- Add the directory that you pointed it to
+- Add your GIFs
+- Start becoming more gificient
+
+If you want to become even more gificient, look at the **Alfred** and **Hazel** workflows that I
+use to prevent myself from ever having to manually upload my GIFs via FTP.
+
+## Filter
+
+By default, the filter functionality will populate with all of the categories you have specified
+in the filename. I use the convention `category-descriptor.gif`, so `angry-batman.gif`, for example.
+If you want to change the hyphen (`-`) delimiter, change the `Gificiency` instantation call in `index.php`:
+
+```javascript
+$(function() {
+  new Gificiency({
+    delimiter: '_' // Use an underscore instead  
+  });
+});
+```
 
 ## Making Changes
 
@@ -41,3 +62,5 @@ that you will drop your GIFs into. Next, add a new script in that folder, and en
 your FTP server credentials):
 
 ![Screenshot](http://cl.drewb.io/image/2O0r1D2D2R1h/Screenshot%202014-01-16%2017-12-36.png)
+
+Now, whenever you drop a GIF (named how you want)
