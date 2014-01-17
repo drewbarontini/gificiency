@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+   <meta charset="UTF-8" />
    <title>Gificiency</title>
-   <link href="http://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css">
-   <link rel="stylesheet" href="assets/stylesheets/gificiency.css">
-   <link href="assets/images/favicon.ico" rel="icon" type="image/ico">
+   <link href="http://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet" type="text/css" />
+   <link rel="stylesheet" href="assets/stylesheets/gificiency.css" />
+   <link href="assets/images/favicon.ico" rel="icon" type="image/ico" />
 </head>
 <body class="cell">
   <header class="header">
