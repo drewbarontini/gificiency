@@ -33,7 +33,7 @@
   <script src="assets/javascripts/gificiency.js" type="text/javascript"></script>
   <script type="text/javascript">
     $(function() {
-      var gificiency = new Gificiency();
+      new Gificiency();
     });
   </script>
 
