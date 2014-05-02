@@ -17,7 +17,7 @@
 .filter.is-expanded
 
   .filter-list
-    @extend .db
+    display: block
 
   .filter-toggle
     background: darken($c-base, 10%)
@@ -29,30 +29,30 @@
 // ----- Item ----- //
 
 .filter-item
-  @extend .di
-  @extend .mrs
+  display: inline
+  margin-right: $b-whitespace-s
 
 // ----- List ----- //
 
 .filter-list
-  @extend %box-sizing
-  @extend .dn
+  @extend .boxSizing
   background: darken($c-base, 5%)
+  display: none
   padding: 0.5 * $b-whitespace
   width: 100%
 
 // ----- Link ----- //
 
 .filter-link
-  @extend .bdr
-  @extend .dib
-  @extend .mbs
-  @extend .mts
-  @extend .tch
   +transition(border-color 0.3s ease-in-out)
+  border: $b-border
   border-radius: 40px
+  color: $c-highlight
+  display: inline-block
   font-size: 80%
   line-height: 2
+  margin-bottom: $b-whitespace-s
+  margin-top: $b-whitespace-s
   padding: 0 $b-whitespace
   &:hover,
   &:focus
@@ -61,16 +61,16 @@
 // ----- Toggle ----- //
 
 .filter-toggle
-  @extend %box-sizing
-  @extend .db
-  @extend .poa
-  @extend .tac
-  @extend .tch
+  @extend .boxSizing
   +transition(background 0.3s ease-in-out)
   background: darken($c-base, 5%)
+  color: $c-highlight
+  display: block
   line-height: 2.7
   padding: 0 (1.5 * $b-whitespace)
+  position: absolute
   right: 0
+  text-align: center
   top: 0
   width: 20%
   &:hover,

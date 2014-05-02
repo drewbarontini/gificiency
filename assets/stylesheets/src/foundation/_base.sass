@@ -6,9 +6,9 @@
 // *************************************
 
 html
-  @extend .tfb
-  @extend .tcb
   background: $c-background
+  color: $c-base
+  font-family: $f-base
   font-size: $b-fontSize
   line-height: $b-lineHeight
 
@@ -20,23 +20,23 @@ body
 // -------------------------------------
 
 ul, p
-  @extend .mtf
+  margin-top: 0
 
 ul, ol
   @extend .lr
 
 li
-  @extend .mtf
+  margin-top: 0
 
 // ----- Headers ----- //
 
 h1, .h1,
 h2, .h2
-  @extend .mbxs
-  @extend .mtf
-  @extend .tfh
-  @extend .twb
+  font-family: $f-header
+  font-weight: bold
   line-height: 1.2
+  margin-bottom: $b-whitespace-xs
+  margin-top: 0
 
 h1, .h1
   font-size: 200%
@@ -49,11 +49,11 @@ h2, .h2
 // -------------------------------------
 
 a
-  @extend .tcb
+  color: $c-base
   text-decoration: none
   &:hover,
   &:focus
-    @extend .tch
+    color: $c-highlight
 
 ::-webkit-input-placeholder
   color: #fff

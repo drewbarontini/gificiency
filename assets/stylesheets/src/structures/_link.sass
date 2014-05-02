@@ -6,13 +6,13 @@
 // *************************************
 
 .link
-  @extend .bdrb
-  @extend .db
-  @extend .tcb
   +transition(all 0.3s ease-in-out)
-  padding: 0.5 * $b-whitespace 2 * $b-whitespace
+  border-bottom: $b-border
+  color: $c-base
+  display: block
+  padding: $b-whitespace-s $b-whitespace-l
   &:hover,
   &:focus
-    @extend .tch
+    color: $c-highlight
     padding-left: 4 * $b-whitespace
     outline: none
