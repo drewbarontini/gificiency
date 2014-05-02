@@ -13,30 +13,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/assets\/javascripts\/src\/gificiency.coffee": {
-		"createSourceMap": 0,
-		"fileType": 32,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/javascripts\/src\/gificiency.coffee",
-		"minifyOutput": 1,
-		"outputAbbreviatedPath": "\/assets\/javascripts\/gificiency.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 1,
-		"outputStyle": 0,
-		"syntaxCheckerStyle": 1
-		},
-	"\/assets\/javascripts\/src\/gificiency.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/assets\/javascripts\/src\/gificiency.js",
-		"outputAbbreviatedPath": "\/assets\/javascripts\/src\/min\/gificiency-ck.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/assets\/javascripts\/vendor\/underscore.min.js": {
 		"fileType": 64,
 		"ignore": 0,
