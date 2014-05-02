@@ -50,12 +50,19 @@ module.exports = (grunt) ->
         dest: 'assets/stylesheets'
         ext: '.css'
 
-  # load plugins
+    # grunt uglify
+    uglify:
+      my_target:
+        files:
+          'assets/javascripts/gificiency.js': ['assets/javascripts/gificiency.js']
+
+  # Load plugins
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-cssmin'
+  grunt.loadNpmTasks 'grunt-contrib-uglify'
 
   # tasks
   grunt.registerTask 'default', ['sass', 'coffee', 'watch']
-  grunt.registerTask 'min', ['cssmin']
+  grunt.registerTask 'min', ['cssmin', 'uglify']
