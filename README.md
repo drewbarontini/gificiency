@@ -43,9 +43,21 @@ $(function() {
 
 If you so choose, you can change the design/functionality by compiling the Sass/CoffeeScript
 files in the `src` directory of each of the `assets/stylesheets`, `assets/javascripts` directories,
-respectively. You can use something like [CodeKit](http://incident57.com/codekit/) to compile your
-files. If you do this, there's a `codekit.config` file in the root of the directory that will
-use the same settings. Once you're done, upload the compiled CSS/JS files to their correct locations.
+respectively. You'll need to set up Grunt to do this, so run the following:
+
+```bash
+# Make sure you install Sass
+sudo gem install sass
+
+# Install grunt cli globally
+sudo npm install -g grunt-cli
+
+# Install dependencies
+npm install
+ 
+# Run Grunt to watch your Sass/CoffeeScript files
+grunt
+```
 
 ## Alfred Search
 
