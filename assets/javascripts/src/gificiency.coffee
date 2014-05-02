@@ -150,6 +150,7 @@ class @Gificiency
   #-------------------------------------
 
   search: (filter) ->
+
     @settings.links.each ->
       elem = $(@)
       if (elem.text().search( new RegExp(filter, 'i') ) < 0)
