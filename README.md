@@ -59,6 +59,12 @@ npm install
 grunt
 ```
 
+To minify the Sass/CoffeeScript files:
+
+```bash
+grunt min
+```
+
 ## Alfred Search
 
 To set up the [Alfred](http://alfredapp.com) custom search, go to `Settings > Features > Web Search`
