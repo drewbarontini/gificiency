@@ -3,3 +3,4 @@ db/
 log/
 tmp/
 .sass_cache/
+node_modules/

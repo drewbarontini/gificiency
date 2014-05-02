@@ -41,10 +41,21 @@ module.exports = (grunt) ->
       options:
         livereload: true
 
+    # grunt cssmin
+    cssmin:
+      minify:
+        expand: true
+        cwd: 'assets/stylesheets'
+        src: ['*.css']
+        dest: 'assets/stylesheets'
+        ext: '.css'
+
   # load plugins
   grunt.loadNpmTasks 'grunt-contrib-sass'
   grunt.loadNpmTasks 'grunt-contrib-coffee'
   grunt.loadNpmTasks 'grunt-contrib-watch'
+  grunt.loadNpmTasks 'grunt-contrib-cssmin'
 
   # tasks
   grunt.registerTask 'default', ['sass', 'coffee', 'watch']
+  grunt.registerTask 'min', ['cssmin']
