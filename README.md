@@ -1,4 +1,4 @@
-# Gificiency v1.0
+# Gificiency v1.0.0
 
 Become more GIF-efficient.
 [http://drewbarontini.com/articles/reinvigorate](http://drewbarontini.com/articles/reinvigorate)
