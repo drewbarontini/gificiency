@@ -1,13 +1,16 @@
-# Gificiency v1.0.0
+Gificiency
+==========
 
 Become more GIF-efficient.
 [http://drewbarontini.com/articles/reinvigorate](http://drewbarontini.com/articles/reinvigorate)
 
-## Requirements
+Requirements
+------------
 
 - Server running PHP/Apache
 
-## Installation
+Installation
+------------
 
 - Download the ZIP of all the files
 - Open up `config.php` and edit the `$url` and `$dir` directories (see below)
@@ -25,7 +28,8 @@ the media (GIFs, images). Once these variables are set up:
 If you want to become even more gificient, look at the **Alfred** and **Hazel** workflows below
 that I use to prevent myself from ever having to manually upload my GIFs via FTP.
 
-## Filter
+Filter
+------
 
 By default, the filter functionality will populate with all of the categories you have specified
 in the filename. I use the convention `category-descriptor.gif`, so `angry-batman.gif`, for example.
@@ -39,7 +43,8 @@ $(function() {
 });
 ```
 
-## Making Changes
+Making Changes
+--------------
 
 If you so choose, you can change the design/functionality by compiling the Sass/CoffeeScript
 files in the `src` directory of each of the `assets/stylesheets`, `assets/javascripts` directories,
@@ -65,7 +70,8 @@ To minify the Sass/CoffeeScript files:
 grunt min
 ```
 
-## Alfred Search
+Alfred Search
+-------------
 
 To set up the [Alfred](http://alfredapp.com) custom search, go to `Settings > Features > Web Search`
 and click `Add Custom Search` at the bottom right. Then, enter the following details (adding your
@@ -73,7 +79,8 @@ site-specific information):
 
 ![Screenshot](http://cl.drewb.io/image/3a3h0S231l01/Screenshot%202014-01-16%2017-09-09.png)
 
-## Hazel Script
+Hazel Script
+------------
 
 To get the custom [Hazel](http://www.noodlesoft.com/hazel.php) script working, create a folder somewhere
 that you will drop your GIFs into. Next, add a new script in that folder, and enter the following (adding 
