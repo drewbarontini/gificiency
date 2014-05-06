@@ -50,7 +50,7 @@ respectively. You'll need to set up Grunt to do this, so run the following:
 sudo gem install sass
 
 # Install grunt cli globally
-sudo npm install -g grunt-cli
+npm install -g grunt-cli
 
 # Install dependencies
 npm install
