@@ -20,7 +20,7 @@
     display: block
 
   .filter-toggle
-    background: darken($c-base, 10%)
+    background: darken($c-text, 10%)
 
 // -------------------------------------
 //   Scaffolding
@@ -30,15 +30,15 @@
 
 .filter-item
   display: inline
-  margin-right: $b-whitespace-s
+  margin-right: $b-space-s
 
 // ----- List ----- //
 
 .filter-list
   @extend .boxSizing
-  background: darken($c-base, 5%)
+  background: darken($c-text, 5%)
   display: none
-  padding: 0.5 * $b-whitespace
+  padding: 0.5 * $b-space
   width: 100%
 
 // ----- Link ----- //
@@ -51,9 +51,9 @@
   display: inline-block
   font-size: 80%
   line-height: 2
-  margin-bottom: $b-whitespace-s
-  margin-top: $b-whitespace-s
-  padding: 0 $b-whitespace
+  margin-bottom: $b-space-s
+  margin-top: $b-space-s
+  padding: 0 $b-space
   &:hover,
   &:focus
     border-color: $c-highlight
@@ -63,11 +63,11 @@
 .filter-toggle
   @extend .boxSizing
   +transition(background 0.3s ease-in-out)
-  background: darken($c-base, 5%)
+  background: darken($c-text, 5%)
   color: $c-highlight
   display: block
   line-height: 2.7
-  padding: 0 (1.5 * $b-whitespace)
+  padding: 0 (1.5 * $b-space)
   position: absolute
   right: 0
   text-align: center
@@ -75,5 +75,5 @@
   width: 20%
   &:hover,
   &:focus
-    background: darken($c-base, 10%)
+    background: darken($c-text, 10%)
 

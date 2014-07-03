@@ -14,27 +14,34 @@
 @import "http://fonts.googleapis.com/css?family=Roboto:100"
 
 // -------------------------------------
-//   Variables
+//   Colors
 // -------------------------------------
 
 // ----- Base ----- //
 
+$c-background: #6284bc
+$c-highlight: #fff
+$c-text: darken($c-background, 20%)
+
+// -------------------------------------
+//   Base
+// -------------------------------------
+
+// ----- Borders ----- //
+
 $b-border: 4px solid darken(#6284bc, 20%)
 $b-borderRadius: 3px
+
+// ----- Typography ----- //
+
+$b-fontFamily: "Roboto", sans-serif
 $b-fontSize: 30px
 $b-lineHeight: 1.5
-$b-whitespace: 0.666666667em
-$b-whitespace-xs: 0.25 * $b-whitespace
-$b-whitespace-s: 0.5 * $b-whitespace
-$b-whitespace-l: 2 * $b-whitespace
 
-// ----- Colors ----- //
+// ----- Sizing ----- //
 
-$c-background: #6284bc
-$c-base: darken($c-background, 20%)
-$c-highlight: #fff
-
-// ----- Fonts ----- //
-
-$f-base: "Roboto", sans-serif
+$b-space: em(20px)
+$b-space-xs: 0.25 * $b-space
+$b-space-s: 0.5 * $b-space
+$b-space-l: 2 * $b-space
 

@@ -377,152 +377,10 @@ table {
   border-spacing: 0;
 }
 
-.boxSizing, .filter-list, .filter-toggle, .search {
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.bcb {
-  background: #375381;
-}
-
-.bch {
-  background: white;
-}
-
-.bdr {
-  border: 4px solid #375381;
-}
-
-.bdrb {
-  border-bottom: 4px solid #375381;
-}
-
-.db {
-  display: block;
-}
-
-.di {
-  display: inline;
-}
-
-.dib {
-  display: inline-block;
-}
-
-.dn {
-  display: none;
-}
-
 .lr, ul, ol {
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
-
-.mbf {
-  margin-bottom: 0;
-}
-
-.mbxs {
-  margin-bottom: 0.16667em;
-}
-
-.mbs {
-  margin-bottom: 0.33333em;
-}
-
-.mbm {
-  margin-bottom: 0.66667em;
-}
-
-.mbl {
-  margin-bottom: 1.33333em;
-}
-
-.mhc {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mlf {
-  margin-left: 0;
-}
-
-.mls {
-  margin-left: 0.33333em;
-}
-
-.mlm {
-  margin-left: 0.66667em;
-}
-
-.mrf {
-  margin-right: 0;
-}
-
-.mrs {
-  margin-right: 0.33333em;
-}
-
-.mrm {
-  margin-right: 0.66667em;
-}
-
-.mtf {
-  margin-top: 0;
-}
-
-.mts {
-  margin-top: 0.33333em;
-}
-
-.mtm {
-  margin-top: 0.66667em;
-}
-
-.ptm {
-  padding-top: 0.66667em;
-}
-
-.fl {
-  float: left;
-}
-
-.fr {
-  float: right;
-}
-
-.poa {
-  position: absolute;
-}
-
-.pof {
-  position: fixed;
-}
-
-.por {
-  position: relative;
-}
-
-.pos {
-  position: static;
-}
-
-.tac {
-  text-align: center;
-}
-
-.tcb {
-  color: #375381;
-}
-
-.tch {
-  color: white;
-}
-
-.tfb {
-  font-family: "Roboto", sans-serif;
 }
 
 html {
@@ -640,7 +498,7 @@ a:hover, a:focus {
   color: white;
   display: block;
   line-height: 2.7;
-  padding: 0 1.0em;
+  padding: 0 1em;
   position: absolute;
   right: 0;
   text-align: center;
@@ -671,9 +529,147 @@ a:hover, a:focus {
   border-bottom: 4px solid #375381;
   color: white;
   font-size: 140%;
-  padding: 0.33333em 1.0em;
+  padding: 0.33333em 1em;
   width: 80%;
 }
 .search:focus {
   outline: none;
+}
+
+.boxSizing, .filter-list, .filter-toggle, .search {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bch {
+  background: white;
+}
+
+.bdr {
+  border: 4px solid #375381;
+}
+
+.bdrb {
+  border-bottom: 4px solid #375381;
+}
+
+.db {
+  display: block;
+}
+
+.di {
+  display: inline;
+}
+
+.dib {
+  display: inline-block;
+}
+
+.dn {
+  display: none;
+}
+
+.mbf {
+  margin-bottom: 0;
+}
+
+.mbxs {
+  margin-bottom: 0.16667em;
+}
+
+.mbs {
+  margin-bottom: 0.33333em;
+}
+
+.mbm {
+  margin-bottom: 0.66667em;
+}
+
+.mbl {
+  margin-bottom: 1.33333em;
+}
+
+.mhc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mlf {
+  margin-left: 0;
+}
+
+.mls {
+  margin-left: 0.33333em;
+}
+
+.mlm {
+  margin-left: 0.66667em;
+}
+
+.mrf {
+  margin-right: 0;
+}
+
+.mrs {
+  margin-right: 0.33333em;
+}
+
+.mrm {
+  margin-right: 0.66667em;
+}
+
+.mtf {
+  margin-top: 0;
+}
+
+.mts {
+  margin-top: 0.33333em;
+}
+
+.mtm {
+  margin-top: 0.66667em;
+}
+
+.ptm {
+  padding-top: 0.66667em;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.poa {
+  position: absolute;
+}
+
+.pof {
+  position: fixed;
+}
+
+.por {
+  position: relative;
+}
+
+.pos {
+  position: static;
+}
+
+.tac {
+  text-align: center;
+}
+
+.tch {
+  color: white;
+}
+
+.tct {
+  color: #375381;
+}
+
+.tfb {
+  font-family: "Roboto", sans-serif;
 }

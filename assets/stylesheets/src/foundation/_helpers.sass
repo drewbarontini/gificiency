@@ -1,9 +1,25 @@
 // *************************************
 //
 //   Helpers
-//   -> Functions, Mixins, Animations
+//   -> Functions, Mixins, Extends, Animations
 //
 // *************************************
+
+// -------------------------------------
+//   Functions
+// -------------------------------------
+
+// ----- Em ----- //
+// -> Converts pixel value to an em
+//
+// $target - the target pixel size
+// $context - the context font-size
+
+@function em($target, $context: $b-fontSize)
+  @if ($target == 0)
+    @return 0
+  @else
+    @return ($target / $context) * 1em
 
 // -------------------------------------
 //   Mixins
@@ -20,4 +36,15 @@
 =transition($args)
   transition: $args
   -webkit-transition: $args
+
+// -------------------------------------
+//   Extends
+// -------------------------------------
+
+// ----- List Reset ----- //
+
+.lr
+  list-style-type: none
+  margin: 0
+  padding: 0
 
