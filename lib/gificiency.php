@@ -1,6 +1,6 @@
 <?php require_once 'config.php';
 
-if ($env == 'production') 
+if ($env == 'production')
 {
   error_reporting(E_ERROR | E_PARSE);
 }
@@ -9,36 +9,43 @@ function print_files($url, $dir)
 {
   $hide = ".";
 
-  $myDirectory = opendir($dir);
+  $directory = opendir($dir);
 
-  if ($myDirectory) 
+  if ($directory)
   {
-    while ($entryName = readdir($myDirectory))
+    while ($entry_name = readdir($directory))
     {
-      $dirArray[] = $entryName;
+      $directory_array[] = $entry_name;
     }
 
-    closedir($myDirectory);
+    closedir($directory);
 
-    $indexCount = count($dirArray);
+    $index_count = count($directory_array);
 
-    sort($dirArray);
+    sort($directory_array);
 
-    for ($index = 0; $index < $indexCount; $index++)
+    $json = array();
+
+    for ($index = 0; $index < $index_count; $index++)
     {
-      if (substr("$dirArray[$index]", 0, 1) != $hide)
+      if (substr("$directory_array[$index]", 0, 1) != $hide)
       {
-        $name = $dirArray[$index];
-        $namehref = $dirArray[$index];
+        $name = $directory_array[$index];
+        $name_href = $directory_array[$index];
+        $json[] = array('name' => $name, 'url' => $url .'/'. $name_href);
         echo("
           <li>
-            <a class='link' href='$url/$namehref'>$name</a>
+            <a class='link' href='$url/$name_href'>$name</a>
           </li>
         ");
       }
     }
-  } 
-  else 
+    unlink('gifs.json');
+    $fp = fopen('gifs.json', 'w');
+    fwrite( $fp, json_encode($json) );
+    fclose($fp);
+  }
+  else
   {
     echo("
       <p class='ptm tac'>Couldn't open the directory specified.</p>
