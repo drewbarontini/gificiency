@@ -28,11 +28,16 @@ function print_files($url, $dir)
 
     for ($index = 0; $index < $index_count; $index++)
     {
-      if (substr("$directory_array[$index]", 0, 1) != $hide)
+      if ( substr("$directory_array[$index]", 0, 1) != $hide )
       {
         $name = $directory_array[$index];
         $name_href = $directory_array[$index];
-        $json[] = array('name' => $name, 'url' => $url .'/'. $name_href);
+        $category = get_category($name);
+        $json[] = array(
+          'name' => $name,
+          'url' => $url .'/'. $name_href,
+          'category' => $category
+        );
         echo("
           <li>
             <a class='link' href='$url/$name_href'>$name</a>
@@ -50,5 +55,14 @@ function print_files($url, $dir)
     echo("
       <p class='ptm tac'>Couldn't open the directory specified.</p>
     ");
+  }
+}
+
+function get_category($name)
+{
+  if ( preg_match("/-/", $name) )
+  {
+    $string = explode('-', $name);
+    return $string[0];
   }
 }
