@@ -32,7 +32,7 @@
   init = ->
     getGifs()
     _initialized = true
-    @
+    return @
 
   # -------------------------------------
   #   Trim Category
