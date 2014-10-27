@@ -4,3 +4,4 @@ log/
 tmp/
 .sass_cache/
 node_modules/
+*.map
