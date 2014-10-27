@@ -22,6 +22,7 @@
   # -------------------------------------
 
   _gifs = []
+  _initialized = false
 
   # -------------------------------------
   #   Initialize
@@ -29,6 +30,7 @@
 
   init = ->
     getGifs()
+    _initialized = true
     @
 
   # -------------------------------------
@@ -60,12 +62,13 @@
   # -------------------------------------
 
   getGifs = ->
-    $.ajax
-      url: 'http://gificiency.com/gifs.json',
-      async: false,
-      dataType: 'json',
-      success: (json) ->
-        _gifs = json
+    unless _initialized
+      $.ajax
+        url: 'http://gificiency.com/gifs.json',
+        async: false,
+        dataType: 'json',
+        success: (json) ->
+          _gifs = json
 
     return _gifs
 

@@ -1,10 +1,12 @@
 this.GificiencyAPI = {};
 
 this.GificiencyAPI = (function() {
-  var getCategory, getCategoryGifs, getGifs, getRandomGif, getRandomGifByCategory, init, randomizer, trimCategory, _gifs;
+  var getCategory, getCategoryGifs, getGifs, getRandomGif, getRandomGifByCategory, init, randomizer, trimCategory, _gifs, _initialized;
   _gifs = [];
+  _initialized = false;
   init = function() {
     getGifs();
+    _initialized = true;
     return this;
   };
   getCategory = function(string) {
@@ -22,14 +24,16 @@ this.GificiencyAPI = (function() {
     return collection[randomNumber];
   };
   getGifs = function() {
-    $.ajax({
-      url: 'http://gificiency.com/gifs.json',
-      async: false,
-      dataType: 'json',
-      success: function(json) {
-        return _gifs = json;
-      }
-    });
+    if (!_initialized) {
+      $.ajax({
+        url: 'http://gificiency.com/gifs.json',
+        async: false,
+        dataType: 'json',
+        success: function(json) {
+          return _gifs = json;
+        }
+      });
+    }
     return _gifs;
   };
   getCategoryGifs = function(category) {
