@@ -1,19 +1,14 @@
 this.GificiencyAPI = {};
 
 this.GificiencyAPI = (function() {
-  var getCategory, getCategoryGifs, getGifs, getRandomGif, getRandomGifByCategory, init, randomizer, trimCategory, _gifs, _initialized;
+  var getCategories, getCategory, getCategoryGifs, getGifs, getRandomGif, getRandomGifByCategory, init, randomizer, trimCategory, _categories, _gifs, _initialized;
   _gifs = [];
+  _categories = [];
   _initialized = false;
   init = function() {
     getGifs();
     _initialized = true;
     return this;
-  };
-  getCategory = function(string) {
-    if (~string.indexOf('-')) {
-      string = trimCategory(string.split('-')[0].split('.')[0]);
-      return string;
-    }
   };
   trimCategory = function(string) {
     return string.replace(/(\r\n|\n|\r)/gm, "").replace(/\s/g, '');
@@ -22,6 +17,15 @@ this.GificiencyAPI = (function() {
     var randomNumber;
     randomNumber = Math.floor(Math.random() * collection.length);
     return collection[randomNumber];
+  };
+  getCategory = function(string) {
+    if (~string.indexOf('-')) {
+      string = trimCategory(string.split('-')[0].split('.')[0]);
+      return string;
+    }
+  };
+  getCategories = function() {
+    return _categories.unique();
   };
   getGifs = function() {
     if (!_initialized) {
@@ -41,6 +45,9 @@ this.GificiencyAPI = (function() {
     categoryGifs = [];
     for (_i = 0, _len = _gifs.length; _i < _len; _i++) {
       gif = _gifs[_i];
+      if (gif['category'] !== null) {
+        _categories.push(gif['category']);
+      }
       if (getCategory(gif['name']) === category) {
         categoryGifs.push(gif);
       }
@@ -61,8 +68,9 @@ this.GificiencyAPI = (function() {
   return {
     init: init,
     all: getGifs,
-    categories: getCategoryGifs,
+    categories: getCategories,
+    category: getCategoryGifs,
     random: getRandomGif,
-    category: getRandomGifByCategory
+    randomByCategory: getRandomGifByCategory
   };
 })();

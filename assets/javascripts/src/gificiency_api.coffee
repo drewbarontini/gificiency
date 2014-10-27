@@ -21,7 +21,8 @@
   #   Private Variables
   # -------------------------------------
 
-  _gifs = []
+  _gifs        = []
+  _categories  = []
   _initialized = false
 
   # -------------------------------------
@@ -32,15 +33,6 @@
     getGifs()
     _initialized = true
     @
-
-  # -------------------------------------
-  #   Get Category
-  # -------------------------------------
-
-  getCategory = (string) ->
-    if ~string.indexOf '-'
-      string = trimCategory( string.split('-')[0].split('.')[0] )
-      return string
 
   # -------------------------------------
   #   Trim Category
@@ -56,6 +48,22 @@
   randomizer = (collection) ->
     randomNumber = Math.floor( Math.random() * collection.length )
     return collection[randomNumber]
+
+  # -------------------------------------
+  #   Get Category
+  # -------------------------------------
+
+  getCategory = (string) ->
+    if ~string.indexOf '-'
+      string = trimCategory( string.split('-')[0].split('.')[0] )
+      return string
+
+  # -------------------------------------
+  #   Get Categories
+  # -------------------------------------
+
+  getCategories = ->
+    return _categories.unique()
 
   # -------------------------------------
   #   Get GIFs
@@ -80,6 +88,10 @@
     categoryGifs = []
 
     for gif in _gifs
+
+      unless gif['category'] == null
+        _categories.push gif['category']
+
       if getCategory( gif['name'] ) == category
         categoryGifs.push gif
 
@@ -108,17 +120,19 @@
 
   init: init
   all: getGifs
-  categories: getCategoryGifs
+  categories: getCategories
+  category: getCategoryGifs
   random: getRandomGif
-  category: getRandomGifByCategory
+  randomByCategory: getRandomGifByCategory
 
 # -------------------------------------
 #   Usage
 # -------------------------------------
 #
-# GificiencyAPI.init().all()             => returns all GIFs
-# GificiencyAPI.init().categories('sad') => returns a set of GIFs based on category
-# GificiencyAPI.init().random()          => returns a single, random GIF
-# GificiencyAPI.init().category('sad')   => returns a single, random GIF based on category
+# GificiencyAPI.init().all()                         => returns all GIFs
+# GificiencyAPI.init().categories()                  => returns a list of available categories
+# GificiencyAPI.init().category('sad')               => returns a set of GIFs for specified category
+# GificiencyAPI.init().random()                      => returns a single, random GIF
+# GificiencyAPI.init().randomByCategory('sad')       => returns a single, random GIF based on category
 #
 
