@@ -129,10 +129,10 @@
 #   Usage
 # -------------------------------------
 #
-# GificiencyAPI.init().all()                         => returns all GIFs
-# GificiencyAPI.init().categories()                  => returns a list of available categories
-# GificiencyAPI.init().category('sad')               => returns a set of GIFs for specified category
-# GificiencyAPI.init().random()                      => returns a single, random GIF
-# GificiencyAPI.init().randomByCategory('sad')       => returns a single, random GIF based on category
+# GificiencyAPI.init().all()                   => returns all GIFs
+# GificiencyAPI.init().categories()            => returns a list of available categories
+# GificiencyAPI.init().category('sad')         => returns a set of GIFs for specified category
+# GificiencyAPI.init().random()                => returns a single, random GIF
+# GificiencyAPI.init().randomByCategory('sad') => returns a single, random GIF based on category
 #
 
