@@ -51,6 +51,7 @@ class Gificiency
 
   def get_random_gif_by_category(category)
     gif_set = get_category_gifs(category)
+
     unless gif_set.empty?
       gif_set.sample[:url]
     else
