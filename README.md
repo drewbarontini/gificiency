@@ -43,6 +43,11 @@ $(function() {
 });
 ```
 
+"API"
+-----
+
+When looping through the directory of GIFs, Gificiency will also go ahead and create a `/gifs.json` file for you to parse in an API. There is an `api/gificiency.rb` wrapper written in Ruby, as well as a `assets/javascripts/src/gificiency_api.coffee` CoffeeScript/JavaScript wrapper.
+
 Making Changes
 --------------
 
