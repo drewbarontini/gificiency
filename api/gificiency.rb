@@ -51,7 +51,11 @@ class Gificiency
 
   def get_random_gif_by_category(category)
     gif_set = get_category_gifs(category)
-    gif_set.sample[:url]
+    unless gif_set.empty?
+      gif_set.sample[:url]
+    else
+      'No GIF found.'
+    end
   end
 end
 
