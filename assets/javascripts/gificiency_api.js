@@ -38,7 +38,7 @@ this.GificiencyAPI = (function() {
     }
   };
   getCategories = function() {
-    return _categories.unique();
+    return _categories.unique().join(', ');
   };
   getGifs = function() {
     if (!_initialized) {

@@ -72,7 +72,7 @@
   # -------------------------------------
 
   getCategories = ->
-    return _categories.unique()
+    return _categories.unique().join(', ')
 
   # -------------------------------------
   #   Get GIFs
