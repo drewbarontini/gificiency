@@ -18,6 +18,19 @@ this.GificiencyAPI = (function() {
     randomNumber = Math.floor(Math.random() * collection.length);
     return collection[randomNumber];
   };
+  Array.prototype.unique = function() {
+    var key, output, value, _i, _ref, _results;
+    output = {};
+    for (key = _i = 0, _ref = this.length; 0 <= _ref ? _i < _ref : _i > _ref; key = 0 <= _ref ? ++_i : --_i) {
+      output[this[key]] = this[key];
+    }
+    _results = [];
+    for (key in output) {
+      value = output[key];
+      _results.push(value);
+    }
+    return _results;
+  };
   getCategory = function(string) {
     if (~string.indexOf('-')) {
       string = trimCategory(string.split('-')[0].split('.')[0]);
