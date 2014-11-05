@@ -20,7 +20,7 @@
     display: block
 
   .filter-toggle
-    background: darken($c-text, 10%)
+    background: lighten($c-background, 5%)
 
 // -------------------------------------
 //   Scaffolding
@@ -63,7 +63,7 @@
 .filter-toggle
   @extend .boxSizing
   +transition(background 0.3s ease-in-out)
-  background: lighten($c-background, 5%)
+  background: $c-border
   border-bottom: $b-border
   color: $c-highlight
   display: block
@@ -77,5 +77,5 @@
   width: 20%
   &:hover,
   &:focus
-    background: lighten($c-background, 10%)
+    background: lighten($c-background, 5%)
 
