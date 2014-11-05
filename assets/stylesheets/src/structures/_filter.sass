@@ -36,7 +36,7 @@
 
 .filter-list
   @extend .boxSizing
-  background: darken($c-text, 5%)
+  background: lighten($c-background, 5%)
   display: none
   padding: 0.5 * $b-space
   width: 100%
@@ -63,10 +63,12 @@
 .filter-toggle
   @extend .boxSizing
   +transition(background 0.3s ease-in-out)
-  background: darken($c-text, 5%)
+  background: lighten($c-background, 5%)
+  border-bottom: $b-border
   color: $c-highlight
   display: block
-  line-height: 2.7
+  height: $search-height
+  line-height: $search-height
   padding: 0 (1.5 * $b-space)
   position: absolute
   right: 0
@@ -75,5 +77,5 @@
   width: 20%
   &:hover,
   &:focus
-    background: darken($c-text, 10%)
+    background: lighten($c-background, 10%)
 

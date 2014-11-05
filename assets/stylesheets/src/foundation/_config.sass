@@ -17,12 +17,16 @@
 //   Colors
 // -------------------------------------
 
+// ----- Palette ----- //
+
+$primary: #111
+
 // ----- Base ----- //
 
-$c-background: #6284bc
-$c-border: darken(#6284bc, 20%)
+$c-background: $primary
+$c-border: darken($primary, 20%)
 $c-highlight: #fff
-$c-text: darken($c-background, 20%)
+$c-text: lighten($c-background, 40%)
 
 // -------------------------------------
 //   Base
@@ -45,4 +49,12 @@ $b-space: em(20px)
 $b-space-xs: 0.25 * $b-space
 $b-space-s: 0.5 * $b-space
 $b-space-l: 2 * $b-space
+
+// -------------------------------------
+//   Structures
+// -------------------------------------
+
+// ----- Search ----- //
+
+$search-height: 80px
 
