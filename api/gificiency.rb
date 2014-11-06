@@ -1,6 +1,5 @@
 require 'net/http'
 require 'json'
-require 'pry'
 
 class Gificiency
 
@@ -17,6 +16,10 @@ class Gificiency
 
   def get_category(string)
     string.to_s.split('-')[0]
+  end
+
+  def get_categoryless_gif(string)
+    string.to_s.split('.')[0]
   end
 
   def get_categories
@@ -39,6 +42,10 @@ class Gificiency
         if gif[:category] == category
           category_gifs << gif
         end
+      else
+        if get_categoryless_gif( gif[:name] ) == category
+          return gif
+        end
       end
     end
 
@@ -52,14 +59,18 @@ class Gificiency
   def get_random_gif_by_category(category)
     gif_set = get_category_gifs(category)
 
-    unless gif_set.empty?
-      gif_set.sample[:url]
+    if gif_set.kind_of?(Array)
+      unless gif_set.empty?
+        gif_set.sample[:url]
+      else
+        'No GIF found.'
+      end
     else
-      'No GIF found.'
+      gif_set[:url]
     end
   end
 end
 
 # gificiency = Gificiency.new
-# puts gificiency.get_categories
 # puts gificiency.get_random_gif_by_category('sad')
+# puts gificiency.get_categories
