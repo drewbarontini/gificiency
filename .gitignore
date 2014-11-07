@@ -5,3 +5,4 @@ tmp/
 .sass_cache/
 node_modules/
 *.map
+bin/
