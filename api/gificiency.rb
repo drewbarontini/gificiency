@@ -56,6 +56,10 @@ class Gificiency
     Net::HTTP.get_response('gificiency.com', '/gifs.json')
   end
 
+  def get_random_gif
+    @gifs.sample[:url]
+  end
+
   def get_random_gif_by_category(category)
     gif_set = get_category_gifs(category)
 

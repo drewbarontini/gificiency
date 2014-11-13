@@ -34,5 +34,13 @@ describe Gificiency do
     self.get_category_gif_test('highfive')
     self.get_category_gif_test('dealwithit')
   end
+
+  describe '#get_random_gif' do
+    it 'should grab a random GIF' do
+      gif = @gificiency.get_random_gif
+
+      expect(gif).to match("http:\/\/gificiency\.com\/m\/*.")
+    end
+  end
 end
 
