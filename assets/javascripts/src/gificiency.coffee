@@ -13,8 +13,7 @@ class @Gificiency
 
   # ----- Constructor ----- #
 
-  constructor: (@options) ->
-    @init()
+  constructor: ( @options ) -> @init()
 
   # ----- Init ----- #
 
@@ -34,44 +33,46 @@ class @Gificiency
 
   setDefaultSettings: ->
     @settings =
-      delimiter: '-'
-      searchField: $('.search')
-      imageClass: 'card'
-      items: $('.categories li')
-      links: $('.link')
-      filter: $('.filter')
-      filterToggle: $('.filter-toggle')
-      filterLink: $('.filter-link')
-      filterList: $('.filter-list')
-      filterItem: $('.filter-item')
-      filterActiveClass: 'is-expanded'
+      delimiter         : '-'
+      searchField       : $( '.search' )
+      imageClass        : 'card'
+      items             : $( '.categories li' )
+      links             : $( '.link' )
+      filter            : $( '.filter' )
+      filterToggle      : $( '.filter-toggle' )
+      filterLink        : $( '.filter-link' )
+      filterList        : $( '.filter-list' )
+      filterItem        : $( '.filter-item' )
+      filterActiveClass : 'is-expanded'
 
-    $.extend(@settings, @options)
+    $.extend( @settings, @options )
 
   # -------------------------------------
   #   Events
   # -------------------------------------
 
   events: ->
-    @settings.searchField.on 'keyup', (e) =>
-      @search( $(e.currentTarget).val() )
+    @settings.searchField.on 'keyup', ( event ) =>
+      @search( $(event.currentTarget).val() )
 
-    throttledInjectPopup = _.throttle(@injectPopup, 500)
+    throttledInjectPopup = _.throttle( @injectPopup, 500 )
 
-    @settings.items.on('mouseover', 'a', (e) =>
-      elem = $(e.currentTarget)
-      image = elem.attr('href')
-      throttledInjectPopup(elem, image)
-    ).on('mouseout', => @clearImages() )
+    @settings.items.on( 'mouseover', 'a', ( event ) =>
+      element = $(event.currentTarget)
+      image   = element.attr('href')
+      throttledInjectPopup( element, image )
+    ).on( 'mouseout', => @clearImages() )
 
-    @settings.filterToggle.on 'click', (e) =>
-      e.preventDefault()
-      @settings.filter.toggleClass(@settings.filterActiveClass)
+    @settings.filterToggle.on 'click', ( event ) =>
+      event.preventDefault()
+      @settings.filter.toggleClass( @settings.filterActiveClass )
 
-    $('.filter-link').on 'click', (e) =>
-      e.preventDefault()
-      query = $(e.currentTarget).attr('href')
+    $( '.filter-link' ).on 'click', ( event ) =>
+      event.preventDefault()
+
+      query                = $(e.currentTarget).attr('href')
       window.location.href = "#{query}"
+
       location.reload()
 
   #-------------------------------------
@@ -82,13 +83,14 @@ class @Gificiency
 
   parseCategories: ->
     self = this
+
     @settings.items.each ->
-      elem = $(@)
-      category = self.getCategory( elem.text() )
+      element = $(@)
+      category = self.getCategory( element.text() )
 
       if category?
-        self.categories.push(category)
-        elem.addClass("category category--#{category}")
+        self.categories.push( category )
+        element.addClass( "category category--#{ category }" )
 
   # ----- List Categories ----- #
 
@@ -97,20 +99,21 @@ class @Gificiency
 
   # ----- Get Category ----- #
 
-  getCategory: (str) ->
-    if ~str.indexOf @settings.delimiter
-      @trimCategory(str.split(@settings.delimiter)[0].split('.')[0])
+  getCategory: (string) ->
+    if ~string.indexOf @settings.delimiter
+      @trimCategory( string.split( @settings.delimiter )[ 0 ].split( '.' )[ 0 ] )
 
   # ----- Trim Category ----- #
 
-  trimCategory: (str) ->
-    str.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, '')
+  trimCategory: (string) ->
+    string.replace( /(\r\n|\n|\r)/gm,"" ).replace( /\s/g, '' )
 
   # ----- Unique Array ----- #
 
   Array::unique = ->
-    output = {}
-    output[@[key]] = @[key] for key in [0...@length]
+    output             = {}
+    output[ @[ key ] ] = @[ key ] for key in [ 0...@length ]
+
     value for key, value of output
 
   # -------------------------------------
@@ -119,10 +122,10 @@ class @Gificiency
 
   setFilterList: ->
     list = @settings.filterList
-    $.each @listCategories(), (key, value) =>
+    $.each @listCategories(), ( key, value ) =>
       list.append(
-        "<li class='filter-item filter-item--#{value}'>
-          <a class='filter-link' href='##{value}'>#{value}</a>
+        "<li class='filter-item filter-item--#{ value }'>
+          <a class='filter-link' href='##{ value }'>#{ value }</a>
          </li>"
       )
 
@@ -132,36 +135,36 @@ class @Gificiency
 
   # ----- Inject Popup ----- #
 
-  injectPopup: (elem, image) =>
-    elem.parent().append( @popup(image) )
+  injectPopup: ( element, image ) =>
+    element.parent().append( @popup( image ) )
 
   # ----- Popup ----- #
 
-  popup: (image) ->
-    $("<img class='#{@settings.imageClass}' src='#{image}'' />")
+  popup: ( image ) ->
+    $( "<img class='#{ @settings.imageClass }' src='#{ image }'' />" )
 
   # ----- Clear Images ----- #
 
   clearImages: ->
-    $('img').each -> $(@).remove()
+    $( 'img' ).each -> $(@).remove()
 
   #-------------------------------------
   #  Search
   #-------------------------------------
 
-  search: (filter) ->
+  search: ( filter ) ->
 
     @settings.links.each ->
-      elem = $(@)
-      if (elem.text().search( new RegExp(filter, 'i') ) < 0)
-        elem.hide()
+      element = $(@)
+      if ( element.text().search( new RegExp( filter, 'i' ) ) < 0 )
+        element.hide()
       else
-        elem.show()
+        element.show()
 
   # ----- Get Hash ----- #
 
   getHash: ->
-    if (window.location.hash isnt '')
-      window.location.hash.substring(1)
+    if ( window.location.hash isnt '' )
+      window.location.hash.substring( 1 )
     else
       false

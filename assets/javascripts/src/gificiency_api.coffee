@@ -38,16 +38,16 @@
   #   Trim Category
   # -------------------------------------
 
-  trimCategory = (string) ->
-    string.replace(/(\r\n|\n|\r)/gm,"").replace(/\s/g, '')
+  trimCategory = ( string ) ->
+    string.replace( /(\r\n|\n|\r)/gm,"" ).replace( /\s/g, '' )
 
   # -------------------------------------
   #   Randomizer
   # -------------------------------------
 
-  randomizer = (collection) ->
+  randomizer = ( collection ) ->
     randomNumber = Math.floor( Math.random() * collection.length )
-    return collection[randomNumber]
+    return collection[ randomNumber ]
 
   # -------------------------------------
   #   Unique Array
@@ -55,16 +55,16 @@
 
   Array::unique = ->
     output = {}
-    output[ @[key] ] = @[key] for key in [0...@length]
+    output[ @[ key ] ] = @[ key ] for key in [ 0...@length ]
     value for key, value of output
 
   # -------------------------------------
   #   Get Category
   # -------------------------------------
 
-  getCategory = (string) ->
+  getCategory = ( string ) ->
     if ~string.indexOf '-'
-      string = trimCategory( string.split('-')[0].split('.')[0] )
+      string = trimCategory( string.split( '-' )[ 0 ].split( '.' )[ 0 ] )
       return string
 
   # -------------------------------------
@@ -72,7 +72,7 @@
   # -------------------------------------
 
   getCategories = ->
-    return _categories.unique().join(', ')
+    return _categories.unique().join( ', ' )
 
   # -------------------------------------
   #   Get GIFs
@@ -81,10 +81,10 @@
   getGifs = ->
     unless _initialized
       $.ajax
-        url: 'http://gificiency.com/gifs.json',
-        async: false,
-        dataType: 'json',
-        success: (json) ->
+        url      : 'http://gificiency.com/gifs.json',
+        async    : false,
+        dataType : 'json',
+        success  : ( json ) ->
           _gifs = json
 
     return _gifs
@@ -93,15 +93,15 @@
   #   Get Category GIFs
   # -------------------------------------
 
-  getCategoryGifs = (category) ->
+  getCategoryGifs = ( category ) ->
     categoryGifs = []
 
     for gif in _gifs
 
-      unless gif['category'] == null
-        _categories.push gif['category']
+      unless gif[ 'category' ] is null
+        _categories.push gif[ 'category' ]
 
-      if getCategory( gif['name'] ) == category
+      if getCategory( gif[ 'name' ] ) is category
         categoryGifs.push gif
 
     return categoryGifs
@@ -111,28 +111,30 @@
   # -------------------------------------
 
   getRandomGif = ->
-    result = randomizer(_gifs)
-    return result['url']
+    result = randomizer( _gifs )
+
+    return result[ 'url' ]
 
   # -------------------------------------
   #   Get Random GIF by Category
   # -------------------------------------
 
-  getRandomGifByCategory = (category) ->
-    set = getCategoryGifs(category)
-    result = randomizer(set)
-    return result['url']
+  getRandomGifByCategory = ( category ) ->
+    set    = getCategoryGifs( category )
+    result = randomizer( set )
+
+    return result[ 'url' ]
 
   # -------------------------------------
   #   Public Methods
   # -------------------------------------
 
-  init: init
-  all: getGifs
-  categories: getCategories
-  category: getCategoryGifs
-  random: getRandomGif
-  randomByCategory: getRandomGifByCategory
+  init             : init
+  all              : getGifs
+  categories       : getCategories
+  category         : getCategoryGifs
+  random           : getRandomGif
+  randomByCategory : getRandomGifByCategory
 
 # -------------------------------------
 #   Usage
@@ -144,4 +146,3 @@
 # GificiencyAPI.init().random()                => returns a single, random GIF
 # GificiencyAPI.init().randomByCategory('sad') => returns a single, random GIF based on category
 #
-
