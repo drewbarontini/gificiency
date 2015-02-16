@@ -12,7 +12,7 @@
 //   States
 // -------------------------------------
 
-// Expanded
+// ----- Expanded ----- //
 
 .filter.is-expanded
 
@@ -35,8 +35,8 @@
 // ----- List ----- //
 
 .filter-list
-  @extend .boxSizing
   background: lighten($c-background, 5%)
+  box-sizing: border-box
   display: none
   padding: 0.5 * $b-space
   width: 100%
@@ -44,9 +44,8 @@
 // ----- Link ----- //
 
 .filter-link
-  +transition(border-color 0.3s ease-in-out)
-  border: $b-border
   border-radius: 40px
+  border: $b-border
   color: $c-highlight
   display: inline-block
   font-size: 80%
@@ -54,6 +53,8 @@
   margin-bottom: $b-space-s
   margin-top: $b-space-s
   padding: 0 $b-space
+  transition: border-color 0.3s ease-in-out
+
   &:hover,
   &:focus
     border-color: $c-highlight
@@ -61,10 +62,9 @@
 // ----- Toggle ----- //
 
 .filter-toggle
-  @extend .boxSizing
-  +transition(background 0.3s ease-in-out)
   background: $c-border
   border-bottom: $b-border
+  box-sizing: border-box
   color: $c-highlight
   display: block
   height: $search-height
@@ -74,8 +74,9 @@
   right: 0
   text-align: center
   top: 0
+  transition: background 0.3s ease-in-out
   width: 20%
+
   &:hover,
   &:focus
     background: lighten($c-background, 5%)
-

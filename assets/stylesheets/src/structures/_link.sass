@@ -6,13 +6,14 @@
 // *************************************
 
 .link
-  +transition(all 0.3s ease-in-out)
   border-bottom: $b-border
   color: $c-text
   display: block
   padding: $b-space-s $b-space-l
+  transition: all 0.3s ease-in-out
+
   &:hover,
   &:focus
     color: $c-highlight
-    padding-left: 4 * $b-space
+    padding-left: $b-space-xl
     outline: none

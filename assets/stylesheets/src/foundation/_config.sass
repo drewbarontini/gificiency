@@ -11,7 +11,7 @@
 
 // ----- Roboto ----- //
 
-@import "http://fonts.googleapis.com/css?family=Roboto:100"
+@import 'http://fonts.googleapis.com/css?family=Roboto:100'
 
 // -------------------------------------
 //   Colors
@@ -39,16 +39,17 @@ $b-borderRadius: 3px
 
 // ----- Typography ----- //
 
-$b-fontFamily: "Roboto", sans-serif
+$b-fontFamily: 'Roboto', sans-serif
 $b-fontSize: 30px
 $b-lineHeight: 1.5
 
 // ----- Sizing ----- //
 
 $b-space: em(20px)
-$b-space-xs: 0.25 * $b-space
-$b-space-s: 0.5 * $b-space
-$b-space-l: 2 * $b-space
+$b-space-xs: $b-space * 0.25
+$b-space-s: $b-space * 0.5
+$b-space-l: $b-space * 2
+$b-space-xl: $b-space * 4
 
 // -------------------------------------
 //   Structures
@@ -57,4 +58,3 @@ $b-space-l: 2 * $b-space
 // ----- Search ----- //
 
 $search-height: 80px
-
