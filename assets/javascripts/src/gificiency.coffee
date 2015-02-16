@@ -44,6 +44,7 @@ class @Gificiency
       filterList        : $( '.filter-list' )
       filterItem        : $( '.filter-item' )
       filterActiveClass : 'is-expanded'
+      hiddenClass       : 'is-hidden'
 
     $.extend( @settings, @options )
 
@@ -153,13 +154,14 @@ class @Gificiency
   #-------------------------------------
 
   search: ( filter ) ->
+    self = @
 
     @settings.links.each ->
       element = $(@)
       if ( element.text().search( new RegExp( filter, 'i' ) ) < 0 )
-        element.hide()
+        element.addClass( self.settings.hiddenClass )
       else
-        element.show()
+        element.removeClass( self.settings.hiddenClass )
 
   # ----- Get Hash ----- #
 
