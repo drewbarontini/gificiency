@@ -71,7 +71,7 @@ class @Gificiency
     $( '.filter-link' ).on 'click', ( event ) =>
       event.preventDefault()
 
-      query                = $(e.currentTarget).attr('href')
+      query                = $(event.currentTarget).attr('href')
       window.location.href = "#{query}"
 
       location.reload()
